@@ -1,4 +1,54 @@
-.idea/misc.xml
-.idea/PythonProject.iml
-.idea/misc.xml
-.idea/PythonProject.iml
+############################
+# PyCharm / IntelliJ IDEA
+############################
+.idea/
+*.iml
+
+############################
+# Python bytecode
+############################
+__pycache__/
+*.py[cod]
+*$py.class
+
+############################
+# Virtual environments
+############################
+.venv/
+venv/
+env/
+ENV/
+
+############################
+# Python build artifacts
+############################
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+############################
+# Testing / coverage
+############################
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+
+############################
+# Logs
+############################
+*.log
+
+############################
+# OS / Editor noise
+############################
+.DS_Store
+Thumbs.db
+
+############################
+# Jupyter
+############################
+.ipynb_checkpoints/
