@@ -1,11 +1,22 @@
 import re
 
-file_path = "All Items"
+class ItemContainer:
+    def __init__(self, path):
+        self.path = path
 
-with open(file_path, "r", encoding="utf-8") as f:
-    text = f.read()
+    def __str__(self):
+        return "ItemContainer({" + self.path + "})"
 
-words = re.findall(r"\b\w+\b", text)
+    def GetItems(self):
+        with open(self.path, "r", encoding="utf-8") as f:
+            text = f.read()
 
-print(f"Found {len(words)} words:")
-print(words)
+        pattern = r"(option value=)(\"\b\w+\")(>)"
+
+        options = re.findall(pattern, text)
+
+        group2s = [match[1] for match in options]
+
+        cleaned = [s.strip('"\'') for s in group2s]
+
+        return cleaned
