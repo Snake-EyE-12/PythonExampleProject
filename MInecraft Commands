@@ -1,0 +1,5 @@
+/execute store result storage mypack:roll value int 1 run random value 1..6
+
+/execute if data storage mypack:roll {value:1} run say Rolled 1
+
+/give minecraft:stick 1
