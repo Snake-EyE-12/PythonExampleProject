@@ -1,11 +1,13 @@
-def __getpowertwo__(num):
-    i = 2
-    x = 1
-    while i <= num:
-        x += 1
-        i *= i
-    return x
+import numpy as np
+from scipy import optimize
 
+# Define the function you want to minimize
+def f(n):
+    return n*
 
+# Use optimize.minimize, providing an initial guess (x0)
+# This finds a local minimum
+result = optimize.minimize(f, x0=0)
 
-print(__getpowertwo__(64))
+print(f"Minimum function value (fun): {result.fun}")
+print(f"Optimal x value (x): {result.x}")
