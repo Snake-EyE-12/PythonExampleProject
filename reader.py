@@ -1,23 +1,11 @@
-from bs4 import BeautifulSoup
-import requests
+import re
 
-url = "https://mcstacker.net/?cmd=give#google_vignette"
-response = requests.get(url)
+file_path = "All Items"
 
-html = response.text
+with open(file_path, "r", encoding="utf-8") as f:
+    text = f.read()
 
-soup = BeautifulSoup(html, "html.parser")
+words = re.findall(r"\b\w+\b", text)
 
-select = soup.find("select", id="GiveItem0")
-
-options = select.find_all("option")
-
-items = [
-    {
-        "text": opt.get_text(strip=True),
-        "value": opt.get("value")
-    }
-    for opt in options
-]
-
-print(items)
+print(f"Found {len(words)} words:")
+print(words)
