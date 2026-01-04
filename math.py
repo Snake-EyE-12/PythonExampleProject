@@ -7,4 +7,5 @@ def __getpowertwo__(num):
     return x
 
 
+
 print(__getpowertwo__(64))
