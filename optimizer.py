@@ -18,17 +18,13 @@ class Optimizer:
         for d in range(1, self.maxAttempts):
             x = 1
             while (x + 1000) ** d < n:
-                x += 1000;
+                x += 1000
             while (x + 100) ** d < n:
-                x += 100;
+                x += 100
             while (x + 10) ** d < n:
-                x += 10;
+                x += 10
             while x ** d < n:
-                x += 1;
+                x += 1
             options.append(Optimization(d, x, x * d + d))
         options.sort(key=lambda x: x.maxLines)
         return options[0]
-
-o = Optimizer(20)
-print(o.Partition(10))
-print(o.Partition(20))
